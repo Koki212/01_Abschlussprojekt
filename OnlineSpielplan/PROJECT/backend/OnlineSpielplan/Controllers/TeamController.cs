@@ -1,11 +1,11 @@
-﻿using System.Web.Http.Cors;
+﻿//using System.Web.Http.Cors;
 using Microsoft.AspNetCore.Mvc;
 using OnlineSpielplan.Models;
 using OnlineSpielplan.Services;
 
 namespace OnlineSpielplan.Controllers
 {
-    [EnableCors(origins: "http://localhost:5173/:competitionId/addteams", headers: "*", methods: "*")]
+    //[EnableCors(origins: "http://localhost:5173/:competitionId/addteams", headers: "*", methods: "*")]
     [ApiController]
     [Route("api/team")]
     public class TeamController : ControllerBase
@@ -25,7 +25,7 @@ namespace OnlineSpielplan.Controllers
             return Ok(team);
         }
 
-        // CREAT-TEAM with an Object passed from the frontend
+        // CREATE-TEAM with an Object passed from the frontend
         [HttpPost("CreateTeamObject")]
         public async Task<IActionResult> Post(Team team, string CompetitionId)
         {
@@ -38,6 +38,14 @@ namespace OnlineSpielplan.Controllers
         public async Task<IActionResult> GetAllTeams()
         {
             var teams = await _teamService.GetAllTeamsAsync();
+            return Ok(teams);
+        }
+
+        // GET-ALL-TEAMS-BY-COMPETITION-ID
+        [HttpGet("GetAllTeamsByCompetitionId")]
+        public async Task<IActionResult> GetAllTeamsByCompetitionId(string id)
+        {
+            var teams = await _teamService.GetAllTeamsByCompetitionIdAsync(id);
             return Ok(teams);
         }
 
@@ -65,6 +73,18 @@ namespace OnlineSpielplan.Controllers
                 return NotFound();
             }
             return Ok(team);
+        }
+
+        // GET-TWO-TEAMS-BY-ID
+        [HttpGet("GetTwoTeamsById")]
+        public async Task<IActionResult> GetTwoTeamsById(string team1Id, string team2Id)
+        {
+            var teams = await _teamService.GetTwoTeamsByIdAsync(team1Id, team2Id);
+            if (teams == null)
+            {
+                return NotFound();
+            }
+            return Ok(teams);
         }
 
         // UPDATE-GAMESPLAYED

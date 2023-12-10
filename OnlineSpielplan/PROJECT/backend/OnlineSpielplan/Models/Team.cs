@@ -8,12 +8,11 @@ namespace OnlineSpielplan.Models
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
-        public string? TeamId { get; set; }
+        public string TeamId { get; set; } = "";
 
-        [BsonRepresentation(BsonType.String)]
         [BsonElement("TeamName")]
         [JsonPropertyName("TeamName")]
-        public string? TeamName { get; set; }
+        public string TeamName { get; set; }
         public int GamesPlayed { get; set; }
         public int GamesWon { get; set; }
         public int GamesDraw { get; set; }
@@ -21,18 +20,14 @@ namespace OnlineSpielplan.Models
         public int GoalsScored { get; set; }
         public int GoalsConceded { get; set; }
         public int Points { get; set; }
-        [BsonRepresentation(BsonType.String)]
         [BsonElement("CompetitionId")]
         [JsonPropertyName("CompetitionId")]
-        public string? CompetitionId { get; set; } = null!;
+        public string CompetitionId { get; set; } = null!;
 
-        public Team(string Teamname)
+        public Team(string teamName)
         {
-            TeamName = Teamname;
-        }
-
-        public Team()
-        {
+            TeamName = teamName;
+            return;
         }
 
     }

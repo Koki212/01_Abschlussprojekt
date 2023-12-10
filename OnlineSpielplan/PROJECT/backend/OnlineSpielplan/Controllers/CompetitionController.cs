@@ -1,13 +1,14 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using OnlineSpielplan.Models;
 using OnlineSpielplan.Services;
-using System.Web.Http.Cors;
+
 
 namespace OnlineSpielplan.Controllers
 {
-    [EnableCors(origins: "http://localhost:5173/newcompetition", headers: "*", methods: "*")]
+    // [EnableCors(origins: "http://localhost:5173/newcompetition", headers: "*", methods: "*")]
     [ApiController]
     [Route("api/competition")]
+
     public class CompetitionController : ControllerBase
     {
         private readonly CompetitionService _competitionService;
@@ -17,6 +18,7 @@ namespace OnlineSpielplan.Controllers
             _competitionService = competitionService;
         }
 
+        // CREATE-COMPETITION
         [HttpPost("CreateCompetition")]
         public async Task<IActionResult> Post(string name)
         {

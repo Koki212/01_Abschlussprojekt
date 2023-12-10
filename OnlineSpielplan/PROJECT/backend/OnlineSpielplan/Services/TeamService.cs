@@ -1,5 +1,4 @@
 ﻿using Microsoft.Extensions.Options;
-using MongoDB.Bson;
 using MongoDB.Driver;
 using OnlineSpielplan.Models;
 
@@ -42,13 +41,28 @@ namespace OnlineSpielplan.Services
         public async Task<List<Team>> GetAllTeamsAsync() =>
             await _teamsCollection.Find(team => true).ToListAsync();
 
+        // Get all teams by competitionId
+        public async Task<List<Team>> GetAllTeamsByCompetitionIdAsync(string id) =>
+            await _teamsCollection.Find(team => team.CompetitionId == id).ToListAsync();
+
         //Get team by name
         public async Task<List<Team>> GetTeamByNameAsync(string Name) =>
             await _teamsCollection.Find(team => team.TeamName == Name).ToListAsync();
 
         // Get team by id
-        public async Task<Team?> GetTeamByIdAsync(string id) =>
-            await _teamsCollection.Find(team => team.TeamId == id).FirstOrDefaultAsync();
+        public async Task<Team> GetTeamByIdAsync(string id) =>
+            await _teamsCollection.Find(team => team.TeamId == id).FirstAsync();
+
+        // Get two teams by id
+        public async Task<List<Team>> GetTwoTeamsByIdAsync(string team1Id, string team2Id)
+        {
+            var team1 = await _teamsCollection.Find(team => team.TeamId == team1Id).FirstAsync();
+            var team2 = await _teamsCollection.Find(team => team.TeamId == team2Id).FirstAsync();
+            var teams = new List<Team>();
+            teams.Add(team1);
+            teams.Add(team2);
+            return teams;
+        }
 
         // Update GamesPlayed
         public async Task UpdateGamesPlayedAsync(string id, int gamesPlayed) =>

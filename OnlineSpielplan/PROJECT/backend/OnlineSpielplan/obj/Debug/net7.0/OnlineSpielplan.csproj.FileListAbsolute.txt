@@ -44,10 +44,4 @@ C:\Users\HP\Desktop\CODING\01_Abschlussprojekt\OnlineSpielplan\PROJECT\backend\O
 C:\Users\HP\Desktop\CODING\01_Abschlussprojekt\OnlineSpielplan\PROJECT\backend\OnlineSpielplan\obj\Debug\net7.0\OnlineSpielplan.pdb
 C:\Users\HP\Desktop\CODING\01_Abschlussprojekt\OnlineSpielplan\PROJECT\backend\OnlineSpielplan\obj\Debug\net7.0\OnlineSpielplan.genruntimeconfig.cache
 C:\Users\HP\Desktop\CODING\01_Abschlussprojekt\OnlineSpielplan\PROJECT\backend\OnlineSpielplan\obj\Debug\net7.0\ref\OnlineSpielplan.dll
-C:\Users\HP\Desktop\CODING\01_Abschlussprojekt\OnlineSpielplan\PROJECT\backend\OnlineSpielplan\bin\Debug\net7.0\System.Web.Cors.dll
-C:\Users\HP\Desktop\CODING\01_Abschlussprojekt\OnlineSpielplan\PROJECT\backend\OnlineSpielplan\bin\Debug\net7.0\System.Net.Http.Formatting.dll
-C:\Users\HP\Desktop\CODING\01_Abschlussprojekt\OnlineSpielplan\PROJECT\backend\OnlineSpielplan\bin\Debug\net7.0\System.Web.Http.dll
-C:\Users\HP\Desktop\CODING\01_Abschlussprojekt\OnlineSpielplan\PROJECT\backend\OnlineSpielplan\bin\Debug\net7.0\System.Web.Http.Cors.dll
-C:\Users\HP\Desktop\CODING\01_Abschlussprojekt\OnlineSpielplan\PROJECT\backend\OnlineSpielplan\bin\Debug\net7.0\Newtonsoft.Json.dll
-C:\Users\HP\Desktop\CODING\01_Abschlussprojekt\OnlineSpielplan\PROJECT\backend\OnlineSpielplan\bin\Debug\net7.0\Newtonsoft.Json.Bson.dll
 C:\Users\HP\Desktop\CODING\01_Abschlussprojekt\OnlineSpielplan\PROJECT\backend\OnlineSpielplan\bin\Debug\net7.0\MongoDB.Driver.Legacy.dll

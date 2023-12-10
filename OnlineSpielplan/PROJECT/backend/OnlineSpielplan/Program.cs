@@ -8,9 +8,10 @@ builder.Services.AddCors(policy =>
     policy.AddDefaultPolicy(
                policy =>
                {
-            policy.WithOrigins("http://localhost:5173")
+            policy.WithOrigins("http://localhost:5173/api/")
                 .AllowAnyHeader()
-                .AllowAnyMethod();
+                .AllowAnyMethod()
+                .AllowAnyOrigin();
         });
 });
 
@@ -20,6 +21,7 @@ builder.Services.Configure<DatabaseSettings>(
 
 builder.Services.AddSingleton<TeamService>();
 builder.Services.AddSingleton<CompetitionService>();
+builder.Services.AddSingleton<MatchService>();
 
 builder.Services.AddControllers()
     .AddJsonOptions(

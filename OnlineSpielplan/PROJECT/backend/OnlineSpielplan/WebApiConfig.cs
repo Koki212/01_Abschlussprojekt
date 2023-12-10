@@ -1,4 +1,4 @@
-﻿using System.Web.Http;
+﻿/*using System.Web.Http;
 namespace OnlineSpielplan
 {
     public class WebApiConfig
@@ -20,3 +20,4 @@ namespace OnlineSpielplan
         }
     }
 }
+*/
